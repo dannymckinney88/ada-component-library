@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
@@ -72,17 +74,24 @@ const AccordionContent = ({ items }: { items: AccordionItem[] }) => (
   </>
 );
 
-export const SingleAccordion: React.FC<SingleAccordionProps> = (props) => (
-  <AccordionPrimitive.Root
-    type="single"
-    defaultValue={props.defaultValue}
-    value={props.value}
-    onValueChange={props.onValueChange}
-    className={`${styles.accordion} ${props.className || ''}`}
-  >
-    <AccordionContent items={props.items} />
-  </AccordionPrimitive.Root>
-);
+export const SingleAccordion: React.FC<SingleAccordionProps> = (props) => {
+  const handleValueChange = (value: string) => {
+    console.log('Accordion changed (Single):', value);
+    props.onValueChange?.(value); // forward it if the user provided one
+  };
+
+  return (
+    <AccordionPrimitive.Root
+      type="single"
+      defaultValue={props.defaultValue}
+      value={props.value}
+      onValueChange={handleValueChange}
+      className={`${styles.accordion} ${props.className || ''}`}
+    >
+      <AccordionContent items={props.items} />
+    </AccordionPrimitive.Root>
+  );
+};
 
 export const MultipleAccordion: React.FC<MultipleAccordionProps> = (props) => (
   <AccordionPrimitive.Root

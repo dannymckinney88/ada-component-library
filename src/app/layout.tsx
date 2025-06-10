@@ -39,11 +39,15 @@ const navItems = [
     items: [
       {
         label: "Accordion",
-        href: "/components/accordion",
+        href: "/pages/accordion",
       },
       {
         label: "Button",
-        href: "/components/button",
+        href: "/pages/button",
+      },
+      {
+        label: "Dialog",
+        href: "/pages/dialog",
       },
     ].sort((a, b) => a.label.localeCompare(b.label)),
   },

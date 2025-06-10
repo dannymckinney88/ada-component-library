@@ -1,4 +1,4 @@
-import { Accordion } from "../../../components/molecules/Accordion/Accordion";
+import { Accordion } from "@/components/molecules/Accordion/Accordion";
 
 export default function AccordionDemoPage() {
   const accordionItems = [

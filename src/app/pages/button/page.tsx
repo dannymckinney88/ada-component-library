@@ -1,4 +1,4 @@
-import { Button } from "../../../components/atoms/Button/Button";
+import { Button } from "@/components/atoms/Button/Button";
 import { PlusIcon, DownloadIcon, UpdateIcon } from "@radix-ui/react-icons";
 
 export default function ButtonDemoPage() {
