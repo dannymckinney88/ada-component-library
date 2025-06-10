@@ -81,7 +81,6 @@ export default function Home() {
             <h3 className="text-xl font-medium">Multiple Accordion</h3>
             <Accordion 
               items={accordionItems} 
-              type="multiple"
               defaultValue={['item-1']}
             />
           </div>
